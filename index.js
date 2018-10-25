@@ -6,6 +6,7 @@ var getUserFollowers = function(username, callback) {
         .get(`https://api.github.com/users/${username}/followers`)
         .end(function(err, res) {
             if (!err) {
+               // console.log(res.body)
                 var users = res.body.map(function(user) {
                     return user.login;
                 });
